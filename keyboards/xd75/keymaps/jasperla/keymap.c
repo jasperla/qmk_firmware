@@ -1,37 +1,28 @@
-#include "xd75.h"
-
-#ifdef notyet
-/* ARROW
- * .--------------------------------------------------------------------------------------------------------------------------------------.
- * |        |        |        |        |        |        |        |        |        |        |        |        |        |        |        |
- * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
- * |        |        |        |        |        |        |        |        |        |        |        |        |        |        |        |
- * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
- * |        |        |        |        |        |        |        |        |        |        |        |        |        |        |        |
- * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
- * |        |        |        |        |        |        |        |        |        |        |        |        |        |        |        |
- * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
- * |        |        |        |        |        |        |        |        |        |        |        |        |        |        |        |
- * '--------------------------------------------------------------------------------------------------------------------------------------'
+/* Copyright 2018 Jasper Lievisse Adriaanse <j@jasper.la>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
- [_AR] = { /* ARROW */
-  { _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, },
-  { _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, },
-  { _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, },
-  { _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, },
-  { _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, },
- }
-#endif
+#include "xd75.h"
 
-// Layer shorthand
+/* Layer shorthand */
 #define _QW 0
 #define _FN 1
 #define _PT 2
 
 /* ALT+F12 is mapped (in software) to lock the user's display */
 #define KC_LOCK LALT(KC_F12)
-#define KC_TERM LALT(KC_ENT)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -53,8 +44,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
  [_QW] = { /* QWERTY */
-  { KC_GRAVE,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    _______,  KC_LOCK, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_BSPC  },
-  { KC_TAB,   KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_LBRC, KC_EQL, KC_RBRC, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS  },
+  { KC_GRAVE, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    _______, KC_LOCK, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_BSPC  },
+  { KC_TAB,   KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_LBRC, KC_EQL,  KC_RBRC, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS  },
   { KC_ESC,   KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_HOME, KC_DEL,  KC_PGUP, KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT  },
   { KC_LSFT,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_END,  KC_INS,  KC_PGDN, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT  },
   { KC_LCTL,  MO(_FN), KC_LGUI, KC_LALT, KC_SPC,  KC_SPC,  _______, _______, MO(_PT), KC_ENT,  KC_ENT,  KC_RALT, KC_RGUI, MO(_PT), KC_RCTL  },
